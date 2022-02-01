@@ -25,14 +25,28 @@ class MenuPage extends StatelessWidget {
               ),
             ),
             const Divider(),
-            const ListTile(
-              title: Text('Contenedores'),
-              trailing: Icon(
+            ListTile(
+              onTap: () => Navigator.pushNamed(context, '/container'),
+              title: const Text('Contenedores'),
+              trailing: const Icon(
                 Icons.arrow_forward_ios_outlined,
                 color: Colors.pink,
               ),
-              leading: Icon(
+              leading: const Icon(
                 Icons.inventory,
+                color: Colors.pink,
+              ),
+            ),
+            const Divider(),
+            ListTile(
+              onTap: () => Navigator.pushNamed(context, '/container'),
+              title: const Text('Cartas'),
+              trailing: const Icon(
+                Icons.arrow_forward_ios_outlined,
+                color: Colors.pink,
+              ),
+              leading: const Icon(
+                Icons.photo_size_select_actual_rounded,
                 color: Colors.pink,
               ),
             ),
