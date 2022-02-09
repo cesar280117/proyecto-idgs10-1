@@ -2,6 +2,7 @@ import 'package:contador/pages/card_page.dart';
 import 'package:contador/pages/contador_page.dart';
 import 'package:contador/pages/container_pages.dart';
 import 'package:contador/pages/menu_page.dart';
+import 'package:contador/pages/stack_pages.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -13,12 +14,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Grupo IDGS10-1',
-        initialRoute: '/cartas',
+        initialRoute: '/stack',
         routes: {
           '/menu': (context) => const MenuPage(),
           '/contador': (context) => const ContadorPage(),
           '/container': (context) => const ContainerPages(),
-          '/cartas': (context) => const CardPage()
+          '/cartas': (context) => const CardPage(),
+          '/stack':(context) => StackPages()
         });
   }
 }
