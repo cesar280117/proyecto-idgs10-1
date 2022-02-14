@@ -1,7 +1,10 @@
+import 'package:contador/controllers/contador_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ContadorPage extends StatelessWidget {
-  const ContadorPage({Key? key}) : super(key: key);
+  ContadorPage({Key? key}) : super(key: key);
+  final contadorController = Get.find<ContadorController>();
 
   @override
   Widget build(BuildContext context) {
@@ -13,14 +16,16 @@ class ContadorPage extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Text(
+          children: [
+            const Text(
               'Numero de contador',
               style: TextStyle(fontSize: 20),
             ),
-            Text(
-              '0',
-              style: TextStyle(fontSize: 18),
+            Obx(
+              () => Text(
+                contadorController.valor.value.toString(),
+                style: const TextStyle(fontSize: 18),
+              ),
             ),
           ],
         ),
@@ -30,7 +35,7 @@ class ContadorPage extends StatelessWidget {
         tooltip: 'Click para incrementar',
         child: const Icon(Icons.add),
         backgroundColor: Colors.pink,
-        onPressed: () {},
+        onPressed: () => contadorController.incrementar(),
       ),
     );
   }
