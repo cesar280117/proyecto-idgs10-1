@@ -1,9 +1,11 @@
 import 'package:contador/controllers/contador_controller.dart';
+import 'package:contador/controllers/menu2_controller.dart';
 import 'package:contador/pages/card_page.dart';
 import 'package:contador/pages/contador_page.dart';
 import 'package:contador/pages/container_pages.dart';
 import 'package:contador/pages/examen1_page.dart';
 import 'package:contador/pages/list_view_page.dart';
+import 'package:contador/pages/menu2_pages.dart';
 import 'package:contador/pages/menu_page.dart';
 import 'package:contador/pages/stack_pages.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +13,7 @@ import 'package:get/get.dart';
 
 void main() {
   Get.lazyPut(() => ContadorController());
+  Get.lazyPut(() => Menu2Controller());
   runApp(const MyApp());
 }
 
@@ -21,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Grupo IDGS10-1',
-        initialRoute: '/examen1',
+        initialRoute: '/menu2',
         routes: {
           '/menu': (context) => const MenuPage(),
           '/contador': (context) => ContadorPage(),
@@ -29,7 +32,8 @@ class MyApp extends StatelessWidget {
           '/cartas': (context) => const CardPage(),
           '/stack': (context) => const StackPages(),
           '/listView': (context) => const ListViewPage(),
-          '/examen1': (context) => const Examen1Pages()
+          '/examen1': (context) => const Examen1Pages(),
+          '/menu2': (context) => const Menu2Pages()
         });
   }
 }

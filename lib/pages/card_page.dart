@@ -6,10 +6,6 @@ class CardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.pink,
-        title: const Text('Seccion de cartas'),
-      ),
       body: Center(
         child: SizedBox(
           width: 300,
